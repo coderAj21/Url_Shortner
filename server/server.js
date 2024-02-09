@@ -26,7 +26,7 @@ app.use("/api/v1",router);
 
 
 app.get("/",(req,res)=>{
-    res.send("{Server is Wroking }");
+    res.send("Server is Wroking");
 })
 
 // DB Connection
