@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 const Signup = ({setIsUser,registered,setRegistered,setUser}) => {
     const [formData,setFormData]=useState({
-        name:"",email:"",password:"",confirmPassword:"",
+        name:"",email:"",password:"",confirmPassword:"",url:[]
     })
     function handlerChange(event){
         setFormData({
