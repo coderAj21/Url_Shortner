@@ -28,8 +28,8 @@ const Signup = ({setIsUser,registered,setRegistered,setUser}) => {
     }
   return (
     <div className='w-1/3 mx-auto my-2'>
-        <h1 className='text-3xl font-semibold text-blue-500'>Sign In</h1>
         <form className='w-full flex flex-col gap-2 my-10' onSubmit={sumbitHandler}>
+            <h1 className='text-3xl font-semibold text-blue-500'>Sign In</h1>
             <label className='text-xl' htmlFor='name'>Name :</label>
             <input
             required
