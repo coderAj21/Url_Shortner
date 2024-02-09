@@ -6,7 +6,7 @@ import MyBar from './components/MyBar';
 import Login from './components/Login';
 
 const App = () => {
-  const [myBar,setMyBar]=useState(true);
+  const [myBar,setMyBar]=useState(false);
   const[isUser,setIsUser]=useState(false);
   const[user,setUser]=useState("");
   return (

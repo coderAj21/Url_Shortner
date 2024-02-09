@@ -12,9 +12,9 @@ const NewUrl = ({encode,url,setActive,active,user,setUser}) => {
         short_url:encode
       },
     }
-    const result=await axios.post("http://localhost:4000/api/v1/updateUrl",data);
+    const result=await axios.post(`${process.env.REACT_APP_BACKEND_URL}/updateUrl`,data);
     toast.success(result?.data.message);
-    const userData=await axios.get(`http://localhost:4000/api/v1/getUser/${user.email}`);
+    const userData=await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getUser/${user.email}`);
     setUser(userData?.data?.user)
 
   }

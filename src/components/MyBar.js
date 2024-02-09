@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 const MyBar = ({user,setUser}) => {
   const [urlData,setUrlData]=useState([]);
   async function fetchApi(){
-    const userData=await axios.get(`http://localhost:4000/api/v1/getUser/${user.email}`);
+    const userData=await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getUser/${user.email}`);
     setUrlData(userData.data.user.url);
     console.log(urlData)
   }
@@ -17,12 +17,12 @@ const MyBar = ({user,setUser}) => {
         email:user.email,
         option:urlData[id],
       }
-      const result=await axios.put("http://localhost:4000/api/v1/deleteUrl",info);
+      const result=await axios.put(`${process.env.REACT_APP_BACKEND_URL}/deleteUrl`,info);
       
       if (result.data.success){
         toast.success(result.data.message);
       }
-      const userData=await axios.get(`http://localhost:4000/api/v1/getUser/${user.email}`);
+      const userData=await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getUser/${user.email}`);
       setUser(userData?.data?.user);
       setUrlData(data);
 

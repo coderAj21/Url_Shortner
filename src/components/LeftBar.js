@@ -10,7 +10,7 @@ const LeftBar = ({user,setMyBar,myBar}) => {
       <div className='flex flex-row items-center gap-20 my-5 mx-4'>
         <p onClick={()=>(setMyBar(!myBar))} className='text-lg font-semibold cursor-pointer
                         hover:scale-95 hover:drop-shadow-xl transition-all duration-200'>My Url</p>
-        <p className='text-lg font-semibold'>{user.url.length==0?0:user.url.length}</p>
+        <p className='text-lg font-semibold'>{user.url.length===0?0:user.url.length}</p>
       </div>
     </div>
   )

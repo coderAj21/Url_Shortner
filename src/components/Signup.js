@@ -15,7 +15,7 @@ const Signup = ({setIsUser,registered,setRegistered,setUser}) => {
     const sumbitHandler=async (event)=>{
         event.preventDefault();
         try{
-            const result=await axios.post("http://localhost:4000/api/v1/signup",formData);
+            const result=await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`,formData);
             if(result.data.success){
                 toast.success(result.data.message);
                 setUser(formData);

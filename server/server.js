@@ -13,7 +13,7 @@ app.use(express.json());
 
 // set cors
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:"*",
     methods:["POST","GET","PUT","DELETE"],
     credentials:true,
 }));
@@ -26,7 +26,7 @@ app.use("/api/v1",router);
 
 
 app.get("/",(req,res)=>{
-    res.send("Hello ji");
+    res.send("{Server is Wroking }");
 })
 
 // DB Connection

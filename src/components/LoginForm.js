@@ -20,10 +20,10 @@ const LoginForm = ({setIsUser,registered,setRegistered,setUser}) => {
     event.preventDefault();
     console.log(loginData);
     try{
-      const result=await axios.post("http://localhost:4000/api/v1/login",loginData);
+      const result=await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`,loginData);
       if(result.data.success){
         toast.success("Login Successfully..");
-        const userData=await axios.get(`http://localhost:4000/api/v1/getUser/${loginData.email}`);
+        const userData=await axios.get(`${process.env.REACT_APP_BACKEND_URL}/getUser/${loginData.email}`);
         console.log(userData.data.user);
         setUser(userData?.data?.user)
         setIsUser(true);
